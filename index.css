@@ -1,79 +1,247 @@
-body{
-    font-family: 'Roboto', sans-serif;
+/* Flex layout for image and description (tablet/desktop) */
+.main-section-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.main-section-img {
+  flex: 1 1 250px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section-desc {
+  flex: 2 1 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  .main-section-flex {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+  .main-section-img {
+    max-width: 350px;
+    margin-right: 0;
+  }
+  .main-section-desc {
+    max-width: 600px;
+    padding-left: 1rem;
+  }
+}
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 /* full section starts */
-.section{
-    background-color: #EEEEEE;
+.section {
+  background-color: #eeeeee;
 }
 
 /* header section starts */
 
-.header-section{
-    padding: 10px;
-    text-align: center;
+.header-section {
+  padding: 10px;
+  text-align: center;
 }
 
-.header-section > h1{
-    font-size: 50px;
+.header-section > h1 {
+  font-size: 50px;
 }
 
-.header-section > h2{
-    font-size: 35px;
+.header-section > h2 {
+  font-size: 35px;
 }
 
-.header-section > h4{
-    font-size: 22px;
+.header-section > h4 {
+  font-size: 22px;
 }
 
+/* Responsive and accessible CSS */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #222;
+  min-height: 100vh;
+}
+
+header,
+main,
+footer {
+  width: 90vw;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+h1,
+h2,
+h3 {
+  color: #2a5298;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+p,
+li {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(42, 82, 152, 0.08);
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #2a5298;
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  header,
+  main,
+  footer {
+    width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  p,
+  li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
 /* header section ends */
 
 /* main section starts */
 
-.main-section{
-    padding: 10px;
+.main-section {
+  padding: 10px;
 }
 
-.main-section-start{
-    border: 1px solid #C1C1C1;
-    padding: 5px;
-    margin: 0 5px 15px;
-    border-radius: 10px;
-    text-align: justify;
+.main-section-start {
+  border: 1px solid #c1c1c1;
+  padding: 5px;
+  margin: 0 5px 15px;
+  border-radius: 10px;
+  text-align: justify;
 }
 
-.main-section-mid{
-    border: 1px solid #C1C1C1;
-    margin: 0 5px 15px;
-    padding: 5px;
-    border-radius: 10px;
+.main-section-mid {
+  border: 1px solid #c1c1c1;
+  margin: 0 5px 15px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .main-section-mid > img {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
 }
 
 .main-section-mid > p {
-    padding: 8px;
-    border-radius: 1px ;
-    background-color: #DDDDDD;
-    text-align: center;
+  padding: 8px;
+  border-radius: 1px;
+  background-color: #dddddd;
+  text-align: center;
 }
 
-.main-section-end > h3{
-    font-size: 30px;
+.main-section-end > h3 {
+  font-size: 30px;
 }
 
-.main-section-end > ul > li > span{
-    font-weight:900;
+.main-section-end > ul > li > span {
+  font-weight: 900;
 }
 
-.main-section-end > p{
-    font-style: italic;
-    text-align: center;
+.main-section-end > p {
+  font-style: italic;
+  text-align: center;
 }
 
 /* header section ends */
